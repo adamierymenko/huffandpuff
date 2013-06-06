@@ -15,7 +15,7 @@
  * or _huffman_encode_table structs in huffman.c, this also must be
  * changed.
  */
-#define MMINI_HUFFHEAP_SIZE ((sizeof(double) * 257) + (((sizeof(void *) * 4) + sizeof(double) + sizeof(unsigned int)) * (257 * 3)) + ((sizeof(unsigned long) + sizeof(unsigned int)) * 257))
+#define MMINI_HUFFHEAP_SIZE ((sizeof(double) * 257) + (((sizeof(void *) * 4) + sizeof(double) + sizeof(unsigned long)) * (257 * 3)) + ((sizeof(unsigned long) + sizeof(unsigned long)) * 257))
 
 /**
  * Huffman encode a block of data
