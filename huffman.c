@@ -243,6 +243,7 @@ int main(int argc,char **argv)
 		for(i=0;i<l;++i)
 			testin[i] = (unsigned char)(rand() & 0xff) & mask;
 		huffman_decompress(testin,l,testver,sizeof(testver),huffbuf);
+		printf("."); fflush(stdout);
 	}
 
 	return 0;
