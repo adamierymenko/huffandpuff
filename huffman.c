@@ -183,7 +183,7 @@ unsigned long huffman_decompress(const unsigned char *in,unsigned long inlen,uns
 	unsigned long inbitctr,outptr,byte_index = 0;
 
 	inbitctr = 0;
-	t = _huffman_read_tree(in,&inbitctr,inlen,&heapptr,heapptr + MMINI_HUFFHEAP_SIZE);
+	t = _huffman_read_tree(in,&inbitctr,inlen,&heapptr,heapptr + HUFFHEAP_SIZE);
 	if (!t) return 0;
 	outptr = 0;
 	for(;;) {
@@ -212,7 +212,7 @@ unsigned long huffman_decompress(const unsigned char *in,unsigned long inlen,uns
 static unsigned char testin[HUFFANDPUFF_TEST_MAXLEN];
 static unsigned char testout[HUFFANDPUFF_TEST_MAXLEN * 2];
 static unsigned char testver[HUFFANDPUFF_TEST_MAXLEN];
-static unsigned char huffbuf[MMINI_HUFFHEAP_SIZE];
+static unsigned char huffbuf[HUFFHEAP_SIZE];
 
 int main(int argc,char **argv)
 {
