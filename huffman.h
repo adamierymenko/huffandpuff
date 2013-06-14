@@ -8,6 +8,10 @@
 #ifndef ____HUFFMAN_H
 #define ____HUFFMAN_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 /**
  * Required size of huffheap parameter to compress and decompress
  *
@@ -24,7 +28,7 @@
  * @param inlen Input data length
  * @param out Output buffer
  * @param outlen Output buffer length
- * @param huffheap Heap memory to use for compression (must be MMINI_HUFFHEAP_SIZE in size)
+ * @param huffheap Heap memory to use for compression (must be HUFFHEAP_SIZE in size)
  * @return Size of encoded result or 0 on out buffer overrun
  */
 extern unsigned long huffman_compress(const unsigned char *in,unsigned long inlen,unsigned char *out,unsigned long outlen,void *huffheap);
@@ -36,9 +40,13 @@ extern unsigned long huffman_compress(const unsigned char *in,unsigned long inle
  * @param inlen Length of input data
  * @param out Output buffer
  * @param outlen Length of output buffer
- * @param huffheap Heap memory to use for decompression (must be MMINI_HUFFHEAP_SIZE in size)
+ * @param huffheap Heap memory to use for decompression (must be HUFFHEAP_SIZE in size)
  * @return Size of decoded result or 0 on out buffer overrun or corrupt input data
  */
 extern unsigned long huffman_decompress(const unsigned char *in,unsigned long inlen,unsigned char *out,unsigned long outlen,void *huffheap);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
